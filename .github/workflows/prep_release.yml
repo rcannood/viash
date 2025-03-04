@@ -2,10 +2,6 @@ name: Prepare Viash Release
 
 on:
   workflow_dispatch:
-    inputs:
-      version:
-        description: 'Version to release'
-        required: true
     
 jobs:
   build-and-release:
