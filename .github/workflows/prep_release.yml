@@ -41,7 +41,9 @@ jobs:
 
     - name: Get Version
       id: get_version
-      run: echo "::set-output name=VERSION::${{ github.event.inputs.version }}"
+      run: |
+        VERSION=$(bin/viash --version | cut -d ' ' -f 2)
+        echo ::set-output name=VERSION::$VERSION
 
     - name: Create tag (error if already available)
       run: |
